@@ -1,0 +1,17 @@
+{
+  "name": "Refreshing",
+  "displayName": "Refreshing",
+  "expo": {
+    "name": "Refreshing",
+    "slug": "Refreshing",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
