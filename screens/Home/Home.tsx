@@ -1,10 +1,19 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Button } from "react-native";
+import { NativeStackNavigationProp } from "react-native-screens/native-stack";
+import { HomeStackNavigator } from "../../navigation/types";
 
-export default function Home() {
+interface Props {
+  navigation: NativeStackNavigationProp<HomeStackNavigator, "Home">;
+}
+
+export default function Home({ navigation }: Props) {
+  const handleDetail = () => navigation.navigate("RecipeDetail");
+
   return (
     <View>
-      <Text>Home Screen :D</Text>
+      <Text>Home Screen yeyeyey :D</Text>
+      <Button title="Go To Recipe details" onPress={handleDetail} />
     </View>
   );
 }
