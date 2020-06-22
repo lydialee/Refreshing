@@ -1,32 +1,29 @@
 import React, { useState } from "react";
 
-import { AppLoading, Asset } from "expo";
+import { AppLoading } from "expo";
+import { Asset } from "expo-asset";
 import AppNavigator from "./navigation/AppNavigator";
 
 // import all used images
 const images = [
-  require("./assets/images/users/Lydia.png"),
-  require("./assets/images/users/Justin.png"),
-  require("./assets/images/users/Tommy.png"),
-  require("./assets/images/plants_1.png"),
-  require("./assets/images/plants_2.png"),
-  require("./assets/images/plants_3.png"),
-  require("./assets/images/explore_1.png"),
-  require("./assets/images/explore_2.png"),
-  require("./assets/images/explore_3.png"),
-  require("./assets/images/explore_4.png"),
-  require("./assets/images/explore_5.png"),
-  require("./assets/images/explore_6.png"),
-  require("./assets/images/illustration_1.png"),
-  require("./assets/images/illustration_2.png"),
-  require("./assets/images/illustration_3.png"),
-  require("./assets/images/avatar.png"),
+  require("./assets/images/users/Lydia.jpg"),
+  require("./assets/images/users/Justin.jpg"),
+  require("./assets/images/users/Tommy.jpg"),
+  require("./assets/images/categories/boba.jpg"),
+  require("./assets/images/categories/cocktail.jpg"),
+  require("./assets/images/categories/coffee.jpg"),
+  require("./assets/images/categories/mocktail.jpg"),
+  require("./assets/images/recipes/classicmargarita_banner.jpg"),
+  require("./assets/images/recipes/mojito_banner.jpg"),
+  require("./assets/images/recipes/painkiller_banner.jpg"),
+  require("./assets/images/recipes/tomcollins_banner.jpg"),
+  require("./assets/images/recipes/whiskeysour_banner.jpg"),
 ];
 
-export const App = () => {
+const App = () => {
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
 
-  const handleResourcesAsync = async () => {
+  const handleResourcesAsync: any = async () => {
     // we're caching all the images
     // for better performance on the app
 
@@ -37,15 +34,18 @@ export const App = () => {
     return Promise.all(cacheImages);
   };
 
-  if (!isLoadingComplete) {
-    return (
-      <AppLoading
-        startAsync={handleResourcesAsync}
-        onError={(error) => console.warn(error)}
-        onFinish={() => setIsLoadingComplete(true)}
-      />
-    );
-  }
-
-  return <AppNavigator />;
+  return (
+    <>
+      {!isLoadingComplete && (
+        <AppLoading
+          startAsync={handleResourcesAsync}
+          onError={(error) => console.warn(error)}
+          onFinish={() => setIsLoadingComplete(true)}
+        />
+      )}
+      {isLoadingComplete && <AppNavigator />}
+    </>
+  );
 };
+
+export default App;
