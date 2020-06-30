@@ -12,6 +12,7 @@ export default function Home({ navigation }: Props) {
 
   return (
     <View>
+      <Text>This is rlly Home Screen!</Text>
       <Button title="Go To Recipe details" onPress={handleDetail} />
     </View>
   );

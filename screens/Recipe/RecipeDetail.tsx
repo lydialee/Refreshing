@@ -4,7 +4,7 @@ import { View, Text } from "react-native";
 export default function RecipeDetail() {
   return (
     <View>
-      <Text>Recipe Detail</Text>
+      <Text>This is Recipe Detail</Text>
     </View>
   );
 }

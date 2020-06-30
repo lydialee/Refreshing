@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-const User = () => {
+const Favorites = () => {
   return (
     <View>
       <Text></Text>
@@ -9,4 +9,4 @@ const User = () => {
   );
 };
 
-export default User;
+export default Favorites;
