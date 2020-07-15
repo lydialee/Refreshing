@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { AppLoading } from "expo";
 import { Asset } from "expo-asset";
 import AppNavigator from "./navigation/AppNavigator";
+import { ThemeProvider } from "@shopify/restyle";
+import theme from "./theme";
 
 // import all used images
 const images = [
@@ -35,7 +37,7 @@ const App = () => {
   };
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       {!isLoadingComplete && (
         <AppLoading
           startAsync={handleResourcesAsync}
@@ -44,7 +46,7 @@ const App = () => {
         />
       )}
       {isLoadingComplete && <AppNavigator />}
-    </>
+    </ThemeProvider>
   );
 };
 

@@ -7,8 +7,10 @@ import { Ionicons } from "@expo/vector-icons";
 
 import Home from "../screens/Home";
 import RecipeDetail from "../screens/Recipe/RecipeDetail";
-import User from "../screens/Favorites/Favorites";
-import Favorites from "../screens/User/User";
+import User from "../screens/User/User";
+import Favorites from "../screens/Favorites/Favorites";
+import Search from "../screens/Search/Search";
+import SearchResult from "../screens/Search/SearchResult/SearchResult";
 import { lightTheme } from "../constants";
 
 const Tab = createBottomTabNavigator();
@@ -20,6 +22,8 @@ const HomeStackScreen = () => {
     <HomeStack.Navigator>
       <HomeStack.Screen name="Home" component={Home} />
       <HomeStack.Screen name="RecipeDetail" component={RecipeDetail} />
+      <HomeStack.Screen name="Search" component={Search} />
+      <HomeStack.Screen name="SearchResult" component={SearchResult} />
     </HomeStack.Navigator>
   );
 };
